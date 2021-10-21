@@ -1,0 +1,75 @@
+* {
+  background-color: #fff6d6;
+}
+
+.logoapp {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  width: 10%;
+}
+
+.titleQuestion {
+  text-align: center;
+  font-family: "Fredoka One";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.products {
+  justify-content: center;
+  align-items: center;
+
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ingredient {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.ingredient:hover {
+  border: 1px solid rgba(77, 3, 2, 0.24);
+}
+
+/* footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(77, 3, 2, 0) 0%, #4D0302 100%);
+} */
+
+button {
+  width: 173px;
+  height: 68px;
+  background: #4d0302;
+  border: 1px solid #4d0302;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 25px;
+  text-align: center;
+
+  color: #fff6d6;
+}
+
+.vButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+}

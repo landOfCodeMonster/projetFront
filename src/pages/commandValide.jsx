@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from "../images/logo.png"
 
 const CommandValide = (props) => {
     return (
@@ -9,9 +8,7 @@ const CommandValide = (props) => {
                 <p>Notre maitre kébabier prépare votre commande.</p>
                 <p>Patience...</p>
             </div>
-            <div>
-                <img className="logoapp" src={logo} alt="Logo le bon burger" />
-            </div>
+           
             <div className='vButton'>
                 <button onClick={() => props.history.push('/')}>Accueil</button>
             </div>

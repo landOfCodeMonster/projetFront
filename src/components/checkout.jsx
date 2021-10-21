@@ -4,7 +4,7 @@ import './checkout.css';
 const Checkout = ({ checkout }) => {
 
   useEffect(() => {
-    console.log(checkout)
+    
   }, [])
 
   return (

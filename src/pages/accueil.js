@@ -2,18 +2,22 @@ import React, { useState, useEffect } from "react";
 import "./accueil.css";
 import datas from "../db/painGalette.json";
 import { useHistory } from "react-router";
+import { useSelector, useDispatch} from 'react-redux'
+import {add} from '../features/panier/panierSlice'
+import Checkout from '../components/checkout';
 
 const Accueil = () => {
   let history = useHistory();
   const [choix, setchoix] = useState([]);
-
+  const checkout = useSelector(state => state.panier.cart);
+  const dispath = useDispatch();
   useEffect(() => {
     setchoix(datas)
   }, [])
 
   const addAliment = (data) => {
-    console.log(data);
-
+    
+    dispath(add(data))
     history.push("/viandeTofu");
   };
 
@@ -45,7 +49,7 @@ const Accueil = () => {
             </div>
           </div>
         </div>
-        {/* <Checkout checkout={checkout}/> */}
+        <Checkout checkout={checkout}/>
       </div>
     </>
   );

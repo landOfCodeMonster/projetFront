@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useSelector, } from 'react-redux'
 
 const Recap = (props) => {
 
-    const [recaps, setRecaps] = useState([])
-
-    useEffect(() => {
-        setRecaps([])
-    }, [])
+    const cart = useSelector(state => state.panier.cart);
+   
     
     const handleRedirect = () => {
         props.history.push('/payment')
@@ -19,11 +17,12 @@ const Recap = (props) => {
                     <p>On récapitule</p>
                 </div>
                 <div className="products">
-                    {recaps && recaps.map(sauce => (
-                        <div className="ingredient" >
-                            <img src={process.env.PUBLIC_URL + '/images/' + sauce.image} alt={sauce.name} className="i" />
-                            <p>{sauce.name}</p>
+                    {cart && cart.map(elt => (
+                        <div key={elt.name} className="ingredient" >
+                            <img src={process.env.PUBLIC_URL + '/images/' + elt.image} alt={elt.name} className="i" />
+                            <p>{elt.name}</p> 
                         </div>
+                        
                     ))}
                 </div>
                 <div className='vButton'>

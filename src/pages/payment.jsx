@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import Checkout from '../components/checkout';
+import { useSelector} from 'react-redux';
 
 const Payment = (props) => {
 
-    const [payments, setPayments] = useState([])
-
+    const [payments] = useState([])
+    const checkout = useSelector(state => state.panier.cart);
+    
     return (
         <div className="corps">
             <div className="titleQuestion">
-                <p>Quelques sauces ?</p>
+                <p>Payement ?</p>
             </div>
             <div className="products">
                 {payments && payments.map(sauce => (
@@ -20,6 +23,7 @@ const Payment = (props) => {
             <div className='vButton'>
                 <button onClick={() => props.history.push('/validerCommande')}>Continuer</button>
             </div>
+            <Checkout checkout={checkout}/>
         </div>
     );
 };

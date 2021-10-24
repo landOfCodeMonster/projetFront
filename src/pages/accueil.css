@@ -30,6 +30,7 @@
 }
 
 .ingredient {
+  position: relative;
   border: 1px solid gray;
   margin: 10px;
   padding: 20px;
@@ -39,7 +40,19 @@
 }
 
 .ingredient:hover {
-  border: 1px solid rgba(77, 3, 2, 0.24);
+  border: 2px solid rgba(77, 3, 2, 0.24);
+}
+
+.checked {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 125px;
+  top: 6px;
+
+  background: no-repeat linear-gradient(0deg, #4d0302, #4d0302),
+    url("../images/check-mark.png");
+  background-blend-mode: color, normal;
 }
 
 /* footer {
@@ -57,7 +70,7 @@ button {
   border: 1px solid #4d0302;
   box-sizing: border-box;
   border-radius: 8px;
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -86,11 +99,19 @@ button {
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

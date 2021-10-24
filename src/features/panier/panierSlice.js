@@ -7,11 +7,10 @@ export const panierSlice = createSlice({
   },
   reducers: {
     add: (state, action) => {
-    
       state.cart.push(action.payload)
     },
-    remove: state => {
-      state.value -= 1
+    remove: (state, action) => {
+      state.cart =  state.cart.filter(item => !item.name.includes(action.payload.name))
     }
   }
 })

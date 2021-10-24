@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./accueil.css";
 import datas from "../db/painGalette.json";
 import { useHistory } from "react-router";
-import { useSelector, useDispatch} from 'react-redux'
-import {add} from '../features/panier/panierSlice'
+import { useSelector, useDispatch} from 'react-redux';
+import {add} from '../features/panier/panierSlice';
 import Checkout from '../components/checkout';
 
 const Accueil = () => {

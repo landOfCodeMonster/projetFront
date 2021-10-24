@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import datas from "../db/sauces.json";
-import { useDispatch} from 'react-redux'
-import {add} from '../features/panier/panierSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import {add, remove} from '../features/panier/panierSlice'
+import Checkout from '../components/checkout';
+import Ingredient from '../components/ingredient';
 
 const Sauces = (props) => {
 
     
     const [sauces, setSauces] = useState(null)
-    const dispath = useDispatch();
-
+    const dispatch = useDispatch();
+    const checkout = useSelector(state => state.panier.cart);
     const handleChoice = (data) => {
-        dispath(add(data))
+      
+    if (checkout.find(elt => elt.name === data.name)) {
+        dispatch(remove(data))
+    } else {
+        dispatch(add(data))
     }
-
+    }
     useEffect(() => {
         setTimeout(() => setSauces(datas), 2000);
     }, [])
@@ -24,10 +30,8 @@ const Sauces = (props) => {
                 </div>
                 <div className="products">
                     {sauces !== null ? sauces.map(sauce => (
-                        <div key={sauce.name} className="ingredient" onClick={() => handleChoice(sauce)} >
-                            <img src={process.env.PUBLIC_URL + '/images/' + sauce.image} alt={sauce.name} className="i" />
-                            <p>{sauce.name}</p>
-                        </div>
+                        <Ingredient accompagnement={sauce} addToCart={handleChoice} />
+                        
                     )): <div className="loader"></div>}
                 </div>
                 <div className='vButton'>
@@ -35,6 +39,7 @@ const Sauces = (props) => {
                     <button onClick={() => props.history.push('/recap')}>Continuer</button>
                     
                 </div>
+                <Checkout checkout={checkout}/>
             </div>
         </>
     );

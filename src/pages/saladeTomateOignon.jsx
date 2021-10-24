@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import datas from '../db/saladeTomatesOigons.json';
 
-import { useDispatch} from 'react-redux'
-import {add} from '../features/panier/panierSlice'
+import { useSelector, useDispatch } from 'react-redux'
+import { add, remove } from '../features/panier/panierSlice'
+import Checkout from '../components/checkout';
+import Ingredient from '../components/ingredient';
 
 const SaladeTomateOignon = (props) => {
 
     const [accompagnements, setAccompagnements] = useState(null)
-    const dispath = useDispatch();
-
+    const dispatch = useDispatch();
+    const checkout = useSelector(state => state.panier.cart);
     useEffect(() => {
         setTimeout(() => setAccompagnements(datas), 2000);
     }, []);
 
-    const handleChoice = (data) => {
-        dispath(add(data))
+    const addToCart = (data) => {
+        if (checkout.find(elt => elt.name === data.name)) {
+            dispatch(remove(data))
+        } else {
+            dispatch(add(data))
+        }
     }
 
     const handleRedirect = () => {
@@ -29,15 +35,13 @@ const SaladeTomateOignon = (props) => {
                 </div>
                 <div className="products">
                     {accompagnements !== null ? accompagnements.map(accompagnement => (
-                        <div key={accompagnement.name} className="ingredient" onClick={() => handleChoice(accompagnement)}>
-                            <img src={process.env.PUBLIC_URL + '/images/' + accompagnement.image} alt="pain" className="i" />
-                            <p>{accompagnement.name}</p>
-                        </div>
-                    )): <div className="loader"></div>}
+                        <Ingredient accompagnement={accompagnement} addToCart={addToCart} />
+                    )) : <div className="loader"></div>}
                 </div>
                 <div className='vButton'>
                     <button onClick={handleRedirect}>Continuer</button>
                 </div>
+                <Checkout checkout={checkout} />
             </div>
         </>
     );

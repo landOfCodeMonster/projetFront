@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import datas from "../db/sauces.json";
+import datas from "../db/menu.json";
 import { useDispatch, useSelector } from 'react-redux'
 import {add, remove} from '../features/panier/panierSlice'
 import Checkout from '../components/checkout';
 import Ingredient from '../components/ingredient';
 
 const Sauces = (props) => {
-
     
     const [sauces, setSauces] = useState(null)
     const dispatch = useDispatch();
@@ -20,7 +19,7 @@ const Sauces = (props) => {
     }
     }
     useEffect(() => {
-        setTimeout(() => setSauces(datas), 2000);
+        setTimeout(() => setSauces(datas.sauces), 2000);
     }, [])
     return (
         <>

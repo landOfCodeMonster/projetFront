@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./accueil.css";
-import datas from "../db/painGalette.json";
+import datas from "../db/menu.json";
 import { useHistory } from "react-router";
 import { useSelector, useDispatch} from 'react-redux';
 import {add} from '../features/panier/panierSlice';
@@ -11,8 +11,9 @@ const Accueil = () => {
   const [choix, setchoix] = useState([]);
   const checkout = useSelector(state => state.panier.cart);
   const dispath = useDispatch();
+
   useEffect(() => {
-    setchoix(datas)
+    setchoix(datas.support)
   }, [])
 
   const addAliment = (data) => {

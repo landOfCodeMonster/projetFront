@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import datas from '../db/viandeTofo.json';
+import datas from '../db/menu.json';
 import Checkout from '../components/checkout';
 import { useSelector, useDispatch} from 'react-redux';
 import {add} from '../features/panier/panierSlice';
@@ -15,7 +15,7 @@ const ViandeTofu = (props) => {
     const dispath = useDispatch();
     
     useEffect(() => {
-        setTimeout(() => setAccompagnements(datas), 2000);
+        setTimeout(() => setAccompagnements(datas.food), 2000);
     }, [])
 
     return (

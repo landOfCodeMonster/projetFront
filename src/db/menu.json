@@ -1,0 +1,65 @@
+{
+  "support": [
+    {
+      "name": "Pain",
+      "image": "Kebab.png"
+    },
+
+    {
+      "name": "Galette",
+      "image": "Galette.png"
+    }
+  ],
+  "food": [
+    {
+      "name": "Viande",
+      "image": "Viande.png"
+    },
+
+    {
+      "name": "Tofu",
+      "image": "Tofu.png"
+    }
+],
+  "crudity" : [
+    {
+      "name": "Salade",
+      "image": "Salade.png"
+    },
+    {
+      "name": "Tomates",
+      "image": "Tomate.png"
+    },
+    {
+      "name": "Oignon",
+      "image": "Oignon.png"
+    }
+  ],
+  "sauces" : [
+    {
+      "name": "Blanche",
+      "image": "sauce-blanche.png"
+    },
+  
+    {
+      "name": "Harissa",
+      "image": "sauce-harissa.png"
+    },
+    {
+      "name": "Andalouse",
+      "image": "sauce-andalouse.png"
+    },
+    {
+      "name": "BBQ",
+      "image": "sauce-bbq.png"
+    },
+    {
+      "name": "Ketchup",
+      "image": "sauce-ketchup.png"
+    },
+    {
+      "name": "Curry",
+      "image": "sauce-curry.png"
+    }
+  ]
+}

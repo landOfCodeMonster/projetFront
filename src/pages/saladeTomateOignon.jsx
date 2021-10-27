@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import datas from '../db/saladeTomatesOigons.json';
+import datas from '../db/menu.json';
 
 import { useSelector, useDispatch } from 'react-redux'
 import { add, remove } from '../features/panier/panierSlice'
@@ -12,7 +12,7 @@ const SaladeTomateOignon = (props) => {
     const dispatch = useDispatch();
     const checkout = useSelector(state => state.panier.cart);
     useEffect(() => {
-        setTimeout(() => setAccompagnements(datas), 2000);
+        setTimeout(() => setAccompagnements(datas.crudity), 2000);
     }, []);
 
     const addToCart = (data) => {

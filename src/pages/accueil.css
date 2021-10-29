@@ -55,13 +55,30 @@
   background-blend-mode: color, normal;
 }
 
-/* footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  background: linear-gradient(180deg, rgba(77, 3, 2, 0) 0%, #4D0302 100%);
-} */
+  height: 300px;
+  background: linear-gradient(179deg, rgba(77, 3, 2, 0) 0%, #4d030238 100%)
+}
+
+.footerText {
+  width: 1505px;
+  height: 265px;
+  left: -14px;
+  top: 819px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 219px;
+  line-height: 265px;
+  /* identical to box height */
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
 
 button {
   width: 173px;
